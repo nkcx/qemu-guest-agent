@@ -39,7 +39,7 @@ the action updates the specific version numbers in the docker file, and pushes t
 On repo updates, Docker is configured to auto-build an updated container, which then becomes available immediately.
 If you have Watchtower, it will then automatically update your qemu-guest-agent container.
 
-Version numbers are:  <alpine version>-<qemu version>.  For example, 3.0.2-5.1 is Alpine 3.0.2 with qemu-guest-agent
+Version numbers are:  `<alpine version>-<qemu version>`.  For example, `3.0.2-5.1` is Alpine 3.0.2 with qemu-guest-agent
 5.1.
 
 # Notes
