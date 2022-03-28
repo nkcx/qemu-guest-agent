@@ -30,6 +30,18 @@ docker run \
         nkcx/qemu-guest-agent
 ```
 
+# Updates and Versions
+
+This repository is configured to automatically provide new versions whenever Alpine Linux or qemu-guest-agent get
+updates.  Every day, a Github action checks for new versions of either software.  When a new version is detected,
+the action updates the specific version numbers in the docker file, and pushes the update to the repo.
+
+On repo updates, Docker is configured to auto-build an updated container, which then becomes available immediately.
+If you have Watchtower, it will then automatically update your qemu-guest-agent container.
+
+Version numbers are:  <alpine version>-<qemu version>.  For example, 3.0.2-5.1 is Alpine 3.0.2 with qemu-guest-agent
+5.1.
+
 # Notes
 
 This container is specifically designed to work well with Fedora CoreOS and Proxmox Hypervisor (which is based on
