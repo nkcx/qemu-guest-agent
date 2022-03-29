@@ -28,6 +28,13 @@ docker run \
         --privileged \
         -v /dev/virtio-ports/org.qemu.guest_agent.0:/dev/virtio-ports/org.qemu.guest_agent.0 \
         nkcx/qemu-guest-agent
+
+sudo docker run --rm --name qemu-ga --privileged -v /dev:/dev -v /bin/systemctl:/bin/systemctl -v /run/systemd/system:/run/systemd/system -v /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket -v /sys/fs/cgroup:/sys/fs/cgroup --ipc=host --net=host qemu-guest-agent:dev1
+
+sudo docker run --rm --name qemu-ga --privileged -v /dev:/dev -v /run/dbus:/run/dbus --ipc=host --net=host qemu-guest-agent:dev1
+
+sudo docker run --rm --name qemu-ga --privileged -v /dev:/dev -v /run/dbus:/run/dbus -v /run/systemd:/run/systemd --pid=host --ipc=host --net=host qemu-guest-agent:debslim1
+
 ```
 
 # Updates and Versions
